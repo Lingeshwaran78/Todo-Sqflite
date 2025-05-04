@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:todo_sqflite/database_helper/database_helper.dart';
-import 'package:todo_sqflite/model/model.dart';
-import 'package:todo_sqflite/utils/components.dart';
+import 'package:notes/database_helper/database_helper.dart';
+import 'package:notes/model/model.dart';
+import 'package:notes/utils/components.dart';
 
 class AddOrEditTodo extends StatefulWidget {
-  const AddOrEditTodo(
-      {super.key,
-      this.model,
-      this.isEdit = false,
-      required this.isCreate,
-      this.i = false});
+  const AddOrEditTodo({super.key, this.model, this.isEdit = false, required this.isCreate, this.i = false});
   final TodoModel? model;
   final bool isEdit;
   final bool isCreate;

@@ -1,4 +1,4 @@
-package dev.lingesh.todo_sqflite
+package dev.lingesh.notes
 
 import io.flutter.embedding.android.FlutterActivity
 

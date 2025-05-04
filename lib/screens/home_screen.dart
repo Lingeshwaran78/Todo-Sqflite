@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:todo_sqflite/database_helper/database_helper.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:todo_sqflite/screens/add_or_edit_todo.dart';
-import 'package:todo_sqflite/utils/card_widget.dart';
+import 'package:notes/screens/add_or_edit_todo.dart';
+import 'package:notes/database_helper/database_helper.dart';
+import 'package:notes/utils/card_widget.dart';
 import '../model/model.dart';
 
 class HomePage extends StatefulWidget {
@@ -96,8 +96,7 @@ class _HomePageState extends State<HomePage> {
   _buildBody() {
     return MasonryGridView.builder(
       itemCount: list.length,
-      gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2),
+      gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (context, index) {
         return GridTile(
             child: NoteCardWidget(

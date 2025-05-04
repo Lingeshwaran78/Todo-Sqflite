@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:todo_sqflite/model/model.dart';
+import 'package:notes/model/model.dart';
 
 final _lightColors = [
   Colors.amber.shade300,

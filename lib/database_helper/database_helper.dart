@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:todo_sqflite/model/model.dart';
+import 'package:notes/model/model.dart';
 
 class TodoDatabase {
   static final instance = TodoDatabase._init();
@@ -45,10 +45,7 @@ class TodoDatabase {
   /// read operation
   Future<TodoModel> readTodo(int id) async {
     final db = await instance.database;
-    final maps = await db.query(tableName,
-        columns: TodoFields.values,
-        where: "${TodoFields.id} = ?",
-        whereArgs: [id]);
+    final maps = await db.query(tableName, columns: TodoFields.values, where: "${TodoFields.id} = ?", whereArgs: [id]);
 
     if (maps.isNotEmpty) {
       return TodoModel.fromJson(maps.first);
@@ -67,15 +64,13 @@ class TodoDatabase {
   /// update
   Future<int> updateTodo(TodoModel model) async {
     final db = await instance.database;
-    return await db.update(tableName, model.toJson(),
-        where: "${TodoFields.id} = ?", whereArgs: [model.id]);
+    return await db.update(tableName, model.toJson(), where: "${TodoFields.id} = ?", whereArgs: [model.id]);
   }
 
   ///delete
   Future<int> delete(int id) async {
     final db = await instance.database;
-    return await db
-        .delete(tableName, where: "${TodoFields.id} = ?", whereArgs: [id]);
+    return await db.delete(tableName, where: "${TodoFields.id} = ?", whereArgs: [id]);
   }
 
   Future close() async {
