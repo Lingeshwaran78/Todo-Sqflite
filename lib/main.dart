@@ -44,7 +44,7 @@ class CompromisedDevice extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset("assets/no_connection.png"),
-              const Text("Sorry Your Device Compromised"),
+              const Text("Sorry Your Device Compromised !"),
             ],
           ),
         ),
